@@ -1,6 +1,7 @@
 version: '3'
 services:
   mysql:
+    container_name: x3_mysql
     image: 'mysql:8.0.19'
     volumes:
        - './mysql_data:/var/lib/mysql'
@@ -16,6 +17,7 @@ services:
        MYSQL_PASSWORD: 'pass'
 
   postgres:
+    container_name: x3_postgres
     image: postgres
     restart: 'always'
     volumes:
@@ -30,6 +32,7 @@ services:
       - '5433:5432'
 
   mongo:
+    container_name: x3_mongo
     image: mongo
     restart: always
     volumes:
@@ -47,6 +50,7 @@ services:
 
 
   myadmin:
+    container_name: x3_admin
     image: 'phpmyadmin/phpmyadmin:5.0.1'
     restart: 'always'
     expose:
